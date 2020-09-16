@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<head>
+    <meta charset="UTF-8">
+    <title> firebase! </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }         
+        .navbar {
+            margin-bottom: 50px;
+        }
+        .table {
+            width: 70%;
+            margin: 0 auto;
+        }
+        .button {
+            width: 70%;
+            margin: 0 auto;
+        }
+        .update-cell {
+            background: cyan;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand"> Hello </a>
+    </nav>
+    <div class="container">    
+        <table class="table table-stripped table-boarder table-hover">
+            <col width="15%"><col width="60%"><col width="15%"><col width="10%">
+            <thead class="highlight-cell">
+                <th>
+                    Severity
+                </th>
+                <th>
+                    Description
+                </th>
+                <th>
+                    Resloved?
+                </th>
+            </thead>
+            <tbody id="list-table-body">
+                
+            </tbody>
+            <tfoot class="update-cell">
+                <td>
+                    <select class="form-control" id="severity-dropdown"> 
+                        <option value="minor">minor</option>
+                        <option value="moderate">moderate</option>
+                        <option value="major">major</option>
+                    </select>
+                </td>
+                <td>
+                    <input class="textfield form-control" id="description-textfield" type="text" name="desctiption-textfield" placeholder="insert data"/>
+                </td>
+                <td>
+                    <select class="form-control" id="resolved-dropdown">
+                        <option value="no">no</option>
+                        <option value="yes">yes</option>
+                    </select>
+                </td>
+                <td>
+                </td>
+            </tfoot>
+        </table>
+        <div class="d-flex justify-content-center">
+            <button class="button btn btn-primary btn-lg btn-block" id="addButton" onclick="addNewIssue()">Add</button>
+        </div>
+    </div>
+<!-- Js for bootsrap -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.20.0/firebase.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-analytics.js"></script>
+
+<script src="index.js"></script>
+</body>
